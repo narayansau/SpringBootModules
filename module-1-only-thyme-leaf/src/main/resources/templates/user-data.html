@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>U S E R  D E T A I L S </title>
+    
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table >
+        <div style="background-color:black;color:white;padding:20px;">
+            <p>
+        <tr> User Details</tr>
+        
+        <tr>
+            <td> <h4> User Name </h4></td>
+            <td><h4> Emails </h4></td>
+        </tr>
+        
+        <tr>
+            <td><h4 th:text="${user.name}"  th:type="A" > </h4></td>
+            <td><h4 th:text="${user.email}"  > </h4></td>
+        </tr>
+            </p>
+        </div>
+    </table>
+
+
+
+</body>
+</html>

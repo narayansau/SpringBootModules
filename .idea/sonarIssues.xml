@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.idea/compiler.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/.idea/misc.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-1-only-thyme-leaf/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-1-only-thyme-leaf/src/main/java/com/example/narayan/module1onlythymeleaf/Entity/User.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-1-only-thyme-leaf/src/main/java/com/example/narayan/module1onlythymeleaf/UserEntityController/UserEntiryController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-1-only-thyme-leaf/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-1-only-thyme-leaf/src/main/resources/templates/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-1-only-thyme-leaf/src/main/resources/templates/user-data.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-jpa-web-apache_derby/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-jpa-web-apache_derby/src/main/java/com/example/narayan/jpawebapache_derby/Entity/UserRecord.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-jpa-web-apache_derby/src/main/java/com/example/narayan/jpawebapache_derby/EntityService/UserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-jpa-web-apache_derby/src/main/java/com/example/narayan/jpawebapache_derby/UserRepository/UserRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf/src/main/java/com/example/narayan/module2webjpaapachederbywiththymeleaf/Enitity/UserEntity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf/src/main/java/com/example/narayan/module2webjpaapachederbywiththymeleaf/Entity_Controller/User_Controller.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf/src/main/java/com/example/narayan/module2webjpaapachederbywiththymeleaf/Entity_Repository/UserRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf/src/main/java/com/example/narayan/module2webjpaapachederbywiththymeleaf/Entity_Service/UserService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf/src/main/java/com/example/narayan/module2webjpaapachederbywiththymeleaf/Entity_Service/User_Service.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
