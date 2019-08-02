@@ -43,4 +43,8 @@ public User_Controller(UserService userService) {
 		return  userService.getAsingleUserBy_PK( id );
 	}
 	
+	@DeleteMapping("/users/{id}")
+	public void delete_A_UserEntityRecord_by_PK(@PathVariable String id) {
+		userService.delete_A_UserEntityRecord_by_PK( id );
+	}
 }
