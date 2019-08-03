@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/a.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.idea/compiler.xml">
           <value>
             <set />
@@ -99,6 +104,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf/src/main/java/com/example/narayan/module2webjpaapachederbywiththymeleaf/Entity_Service/User_Service.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/Controller/PersonEntityController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/resources/application.properties">
           <value>
             <set />
           </value>
