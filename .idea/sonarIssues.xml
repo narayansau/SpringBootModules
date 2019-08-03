@@ -123,6 +123,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/module-4-simple-spring-example-with-java/module-4-simple-spring-example-with-java.iml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-4-simple-spring-example-with-java/src/com/narayan/Student.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-4-simple-spring-example-with-java/src/com/narayan/Test.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-4-simple-spring-example-with-java/src/com/narayan/applicationContext.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>

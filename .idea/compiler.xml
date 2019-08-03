@@ -2,14 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="module-1-only-thyme-leaf" />
+        <module name="springboot-maven" />
         <module name="module-2-web-jpa-apache-derby-with-thyme-leaf" />
         <module name="module-3-web-jdbc-mysql-lombok" />
-        <module name="springboot-maven" />
+        <module name="module-1-only-thyme-leaf" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
