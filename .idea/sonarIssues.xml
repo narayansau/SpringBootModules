@@ -18,6 +18,21 @@
             <set />
           </value>
         </entry>
+        <entry key="/dummy.sql">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../E-Commerce-J-Cart-Application/JCart/jcart-admin/src/main/java/com/sivalabs/jcart/admin/security/CustomUserDetailsService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.idea/compiler.xml">
           <value>
             <set />
@@ -113,7 +128,47 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/Entity/PersonEntity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/Controller/PersonEntityController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/Entity/Person1Sq.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/Entity/PersonEntity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/EntityServices/Person1SqDaoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/EntityServices/PersonDaoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/PersonServiceImplimentation/PersonServiceImplimentation.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/Repositories/PersonRepository.java">
           <value>
             <set />
           </value>
