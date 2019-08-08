@@ -1,6 +1,7 @@
 package com.example.narayan.module3webjdbcmysqllombok.EntityServices;
 
 import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 
@@ -22,9 +23,16 @@ public class PersonDaoService{
 		  jdbcTemplate.execute( query );
 	}
 	
+	
+	/*******************************************************
+	 *
+	 * @param e
+	 * @return int
+	 * is used to insert, update and delete records using PreparedStatement using given arguments.
+	 ***********************************************************************/
 	public int  savePersonWith_update_Command(PersonEntity e) {
 		
-		String query = Cretate_Query ( e );
+		String query = Cretate_Query ( e  );
 		
 		return jdbcTemplate.update( query );
 		
@@ -39,12 +47,48 @@ public class PersonDaoService{
 		
 	}
 	
-	public int deletePerson(PersonEntity e) {
-		String query = "delete  person  " +
-				 " where id = " +
-				e.getId() + " ";
+	public int deletePersonWithId(int e) {
+		String query = "delete  from person  " +
+				 " where id = " + e + " ";
 		
 		return jdbcTemplate.update(query);
+		
+	}
+	
+	public int deletePersonRecord(PersonEntity e){
+		String query="delete from person where id='"+e.getId()+"' ";
+		return jdbcTemplate.update(query);
+	}
+	
+	
+	public  PersonEntity selectARowById (int e) {
+		String sql = "SELECT * FROM person WHERE ID =  ? " ;
+		
+		PersonEntity  personEntity = jdbcTemplate.queryForObject ( sql,
+				  new Object []{e} ,
+				new BeanPropertyRowMapper<PersonEntity> (PersonEntity.class) );
+				
+		return  personEntity;
+	}
+	
+	//Select a rowid by using Lambda function
+	public PersonEntity selectARowById_Lambda (int e) {
+		
+		String sql = "SELECT * FROM person WHERE ID =  ? " ;
+		
+		// Lambda function  (rs, rowNum) ->  is equivalent to BeanPropertyRowMapper
+		return jdbcTemplate.queryForObject(sql, new Object[]{e}, (rs, rowNum) ->
+				new PersonEntity(
+						rs.getInt("id"),
+						rs.getString("email"),
+						rs.getString("name"),
+						rs.getString("password"),
+						rs.getString("role"),
+						rs.getByte("enabled"),
+						rs.getTimestamp("birthdate") ,
+						rs.getTimestamp("created") ,
+						rs.getTimestamp("modified")
+				));
 		
 	}
 	
@@ -62,6 +106,8 @@ public class PersonDaoService{
 						e.getCreated() + "' , '" +
 						e.getModified() + "')" ;
 	}
+	
+	
 	
 	
 }

@@ -23,4 +23,24 @@ public class PersonEntity{
     private Timestamp created;
     private Timestamp modified;
     
+    // Constructor
+    
+   public PersonEntity(int id, String email, String name, String password,
+                        String role, Byte enabled, Timestamp birthdate,
+                       Timestamp created, Timestamp modified) {
+        this.id=id;
+        this.email=email;
+        this.name=name;
+        this.password=password;
+        this.role=role;
+        this.enabled=enabled;
+        this.birthdate=birthdate;
+        this.created=created;
+        this.modified=modified;
+    }
+    
+    
+    public PersonEntity() {
+    
+    }
 }
