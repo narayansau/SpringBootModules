@@ -118,7 +118,15 @@ public String variousInsertofDatainPersonTable() {
 	}
 	
 	
-		
+	
+	@GetMapping("/deleterowrowmapper/{id}")
+	public String DeleteDatainPersonTableById_AfterFindingRowWithRowMapper(@PathVariable int id) {
+		PersonDaoService personDaoService=new PersonDaoService( jdbcTemplate );
+		PersonEntity personEntity=new PersonEntity();
+		personEntity=personDaoService.selectARowById_By_RowMappaer( id );
+		int i=personDaoService.deletePersonRecord( personEntity );
+		return "record " + i + " Deleted  Successfully  "   + personEntity.toString() ;
+	}
 		
 		
 		PersonEntity setPersonEntity(PersonEntity personEntity , Person1SqDaoService person1SqDaoService ) {

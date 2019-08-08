@@ -1,6 +1,7 @@
 package com.example.narayan.module3webjdbcmysqllombok.EntityServices;
 
 import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -8,9 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class PersonDaoService{
 	
 	private JdbcTemplate jdbcTemplate;
-	//Person1SqDaoService person1Sq;
-	
-	
 	
 	public PersonDaoService(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate=jdbcTemplate;
@@ -55,13 +53,13 @@ public class PersonDaoService{
 		
 	}
 	
-	public int deletePersonRecord(PersonEntity e){
+	public int deletePersonRecord(PersonEntity e) throws DataAccessException{
 		String query="delete from person where id='"+e.getId()+"' ";
 		return jdbcTemplate.update(query);
 	}
 	
 	
-	public  PersonEntity selectARowById (int e) {
+	public  PersonEntity selectARowById (int e) throws DataAccessException {
 		String sql = "SELECT * FROM person WHERE ID =  ? " ;
 		
 		PersonEntity  personEntity = jdbcTemplate.queryForObject ( sql,
@@ -72,7 +70,7 @@ public class PersonDaoService{
 	}
 	
 	//Select a rowid by using Lambda function
-	public PersonEntity selectARowById_Lambda (int e) {
+	public PersonEntity selectARowById_Lambda (int e) throws DataAccessException {
 		
 		String sql = "SELECT * FROM person WHERE ID =  ? " ;
 		
@@ -91,6 +89,18 @@ public class PersonDaoService{
 				));
 		
 	}
+	
+
+	
+	//Select a rowid by using Lambda function
+	public PersonEntity selectARowById_By_RowMappaer (int e)  throws DataAccessException {
+		
+		String sql="SELECT * FROM person WHERE ID =  ? ";
+		
+		// Lambda function  (rs, rowNum) ->  is equivalent to BeanPropertyRowMapper
+		return jdbcTemplate.queryForObject( sql, new Object[]{e}, new PersonEntityRowMaper() );
+	}
+				
 	
 	private String Cretate_Query (PersonEntity e ){
 		

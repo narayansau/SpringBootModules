@@ -163,6 +163,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/EntityServices/PersonEntityRowMaper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/src/main/java/com/example/narayan/module3webjdbcmysqllombok/PersonServiceImplimentation/PersonServiceImplimentation.java">
           <value>
             <set />

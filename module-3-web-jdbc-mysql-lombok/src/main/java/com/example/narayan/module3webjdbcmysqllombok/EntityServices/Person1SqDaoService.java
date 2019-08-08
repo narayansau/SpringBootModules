@@ -18,6 +18,7 @@ public class Person1SqDaoService{
 	@Nullable
 	public int Person_1sq_get_Next() {
 		int seqId = jdbcTemplate.queryForObject("select * from person_1sq" , Integer.class);
+		
 		String query ="update person_1sq set id  = " + (seqId + 1) ;
 		jdbcTemplate.update(query);
 		
