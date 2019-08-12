@@ -1,47 +1,38 @@
 package com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices;
 
-import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
-import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 
 public class PersonDaoService{
 	
-	private JdbcTemplate jdbcTemplate;
+	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
-	public PersonDaoService(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate=jdbcTemplate;
+	public PersonDaoService(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+		this.namedParameterJdbcTemplate=namedParameterJdbcTemplate;
 	}
 	
-	
+}
+
+/*************
 	public void savePersonWith_execute_Command(PersonEntity e) {
 		
 		String query = Cretate_Query ( e );
 	
-		  jdbcTemplate.execute( query );
+		  namedParameterJdbcTemplate.execute( query );
 	}
 	
 	
-	/*******************************************************
+	*******************************************************
 	 *
 	 * @param e
 	 * @return int
 	 * is used to insert, update and delete records using PreparedStatement using given arguments.
-	 ***********************************************************************/
+	 ***********************************************************************
 	public int  savePersonWith_update_Command(PersonEntity e) {
 		
 		String query = Cretate_Query ( e  );
 		
-		return jdbcTemplate.update( query );
+		return namedParameterJdbcTemplate.update( query );
 		
 	}
 	
@@ -50,7 +41,7 @@ public class PersonDaoService{
 				"name = " + e.getName() + " where id = " +
 				e.getId() + " ";
 		
-		return jdbcTemplate.update(query);
+		return namedParameterJdbcTemplate.update(query);
 		
 	}
 	
@@ -58,20 +49,20 @@ public class PersonDaoService{
 		String query = "delete  from person  " +
 				 " where id = " + e + " ";
 		
-		return jdbcTemplate.update(query);
+		return namedParameterJdbcTemplate.update(query);
 		
 	}
 	
 	public int deletePersonRecord(PersonEntity e) throws DataAccessException{
 		String query="delete from person where id='"+e.getId()+"' ";
-		return jdbcTemplate.update(query);
+		return namedParameterJdbcTemplate.update(query);
 	}
 	
 	
 	public  PersonEntity selectARowById (int e) throws DataAccessException {
 		String sql = "SELECT * FROM person WHERE ID =  ? " ;
 		
-		PersonEntity  personEntity = jdbcTemplate.queryForObject ( sql,
+		PersonEntity  personEntity = namedParameterJdbcTemplate.queryForObject ( sql,
 				  new Object []{e} ,
 				new BeanPropertyRowMapper<PersonEntity> (PersonEntity.class) );
 				
@@ -84,7 +75,7 @@ public class PersonDaoService{
 		String sql = "SELECT * FROM person WHERE ID =  ? " ;
 		
 		// Lambda function  (rs, rowNum) ->  is equivalent to BeanPropertyRowMapper
-		return jdbcTemplate.queryForObject(sql, new Object[]{e}, (rs, rowNum) ->
+		return namedParameterJdbcTemplate.queryForObject(sql, new Object[]{e}, (rs, rowNum) ->
 				new PersonEntity(
 						rs.getInt("id"),
 						rs.getString("email"),
@@ -107,7 +98,7 @@ public class PersonDaoService{
 		String sql="SELECT * FROM person WHERE ID =  ? ";
 		
 		// Lambda function  (rs, rowNum) ->  is equivalent to BeanPropertyRowMapper
-		return jdbcTemplate.queryForObject( sql, new Object[]{e}, new PersonEntityRowMaper1() {
+		return namedParameterJdbcTemplate.queryForObject( sql, new Object[]{e}, new PersonEntityRowMaper1() {
 			@Override
 			public PersonEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return super.mapRow( rs, rowNum );
@@ -122,7 +113,7 @@ public class PersonDaoService{
 		
 		String sql = "SELECT * FROM person";
 		
-		List<PersonEntity> personEntityList = jdbcTemplate.query(
+		List<PersonEntity> personEntityList = namedParameterJdbcTemplate.query(
 				sql,
 				new BeanPropertyRowMapper(PersonEntity.class));
 		
@@ -131,7 +122,7 @@ public class PersonDaoService{
 	
 	
 	public List<PersonEntity> getAllEmployeesRowMapper(){
-		return jdbcTemplate.query("select * from person",new   PersonEntityRowMaper1(){
+		return namedParameterJdbcTemplate.query("select * from person",new   PersonEntityRowMaper1(){
 			@Override
 			public PersonEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return super.mapRow( rs, rowNum );
@@ -144,7 +135,7 @@ public class PersonDaoService{
 		String sql="SELECT * FROM person ";
 		
 		// Lambda function  (rs, rowNum) ->  is equivalent to BeanPropertyRowMapper
-		return jdbcTemplate.query(sql,  (rs, rowNum) ->
+		return namedParameterJdbcTemplate.query(sql,  (rs, rowNum) ->
 				new PersonEntity(
 						rs.getInt("id"),
 						rs.getString("email"),
@@ -166,7 +157,7 @@ public class PersonDaoService{
 		
 		List<PersonEntity> allPersons = new ArrayList <>();
 		
-		List<Map <String, Object>> rows = jdbcTemplate.queryForList(sql);
+		List<Map <String, Object>> rows = namedParameterJdbcTemplate.queryForList(sql);
 		
 		for (Map rs : rows) {
 			PersonEntity obj = new PersonEntity();
@@ -211,12 +202,12 @@ public class PersonDaoService{
 	
 
 	public void  insert_locally_with_execute (  Person1SqDaoService1 person1SqDaoService1 ) {
-		//jdbcTemplate = new JdbcTemplate();
-		Timestamp timestamp = new Timestamp(new Date().getTime());
-		 person1SqDaoService1 = new Person1SqDaoService1(jdbcTemplate);
+		// JdbcTemplate namedParameterJdbcTemplate = new JdbcTemplate() ;
+		 Timestamp timestamp = new Timestamp(new Date().getTime());
+		 person1SqDaoService1 = new Person1SqDaoService1( namedParameterJdbcTemplate);
 		
 		
-		jdbcTemplate.execute( "INSERT INTO person " +
+		namedParameterJdbcTemplate.execute( "INSERT INTO person " +
 				" (id," +
 				"email," +
 				"name," +
@@ -234,3 +225,4 @@ public class PersonDaoService{
 	}
 	
 }
+*/

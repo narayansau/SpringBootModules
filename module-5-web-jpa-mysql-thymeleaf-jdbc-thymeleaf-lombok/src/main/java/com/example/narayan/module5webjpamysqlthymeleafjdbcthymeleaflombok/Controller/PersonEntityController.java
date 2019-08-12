@@ -4,54 +4,46 @@ package com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.Contr
 import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
 import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.Person1SqDaoService1;
 import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.PersonDaoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.sql.Timestamp;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 
 @RestController
 public class PersonEntityController{
 	
+	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
-	 JdbcTemplate jdbcTemplate;
 	
-	
-	@Autowired
-	public PersonEntityController(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate=jdbcTemplate;
-		
-		
+	public PersonEntityController(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+		this.namedParameterJdbcTemplate=namedParameterJdbcTemplate;
 	}
-	
 
-	
-//@RequestMapping("/insert")
-@GetMapping("/insert")
-public String variousInsertofDatainPersonTable() {
-	
-		int seqId ;
-	
-	/**********************
-	 * // Entity Dao Services
-	 * Genereally need to define all Entity DAo service and
-	 * All Entity , and initialize them.
-	 * If an Entity object does noy need any input data m that entity may not require to initialize here
-	 **************************/
-	
-	PersonDaoService personDaoService = new PersonDaoService( jdbcTemplate );
-	
-	Person1SqDaoService1 person1SqDaoService1= new Person1SqDaoService1(jdbcTemplate);
-	PersonEntity personEntity = new PersonEntity();
-	
-	
-	
+	@GetMapping("/insert")
+	public String variousInsertofDatainPersonTable() {
+		
+		int seqId;
+		
+		/**********************
+		 * // Entity Dao Services
+		 * Genereally need to define all Entity DAo service and
+		 * All Entity , and initialize them.
+		 * If an Entity object does noy need any input data m that entity may not require to initialize here
+		 **************************/
+		
+		
+		Person1SqDaoService1 person1SqDaoService1=new Person1SqDaoService1( namedParameterJdbcTemplate );
+		
+		PersonDaoService personDaoService=new PersonDaoService( namedParameterJdbcTemplate );
+		PersonEntity personEntity=new PersonEntity();
+		
+		seqId = person1SqDaoService1.Person_1sq_get_Next();
+		
+		return "Got the sequence"  + seqId   +  namedParameterJdbcTemplate.getJdbcTemplate() + "  " +
+				    namedParameterJdbcTemplate.getJdbcOperations();
+	}
+}
+/*
 	// Premitive type insert into a table
 	
 	personDaoService.insert_locally_with_execute ( person1SqDaoService1 );
@@ -61,7 +53,7 @@ public String variousInsertofDatainPersonTable() {
 	 *  Want to insert row in a table
 	 *  Set values of all required column of the entity
 	 *  Call DaoService of those entities.
-	 **********************************/
+	 **********************************
 	personEntity = setPersonEntity( personEntity , person1SqDaoService1 );
 		
 		// Insert can be done by  executing DDL query.  with void reurn type
@@ -79,13 +71,14 @@ public String variousInsertofDatainPersonTable() {
 	
 		return "Data Inserted Successfully  " + i;
 	}
+
 	
 	
 	
 	@GetMapping("/delete/{id}")
 	public String DeleteDatainPersonTableById(@PathVariable int id) {
 		
-		PersonDaoService personDaoService = new PersonDaoService( jdbcTemplate );
+		PersonDaoService personDaoService = new PersonDaoService( namedParameterJdbcTemplate);
 		
 		
 		
@@ -97,7 +90,7 @@ public String variousInsertofDatainPersonTable() {
 	@GetMapping("/deleterow/{id}")
 	public String DeleteDatainPersonTableById_AfterFindingRow(@PathVariable int id) {
 		
-		PersonDaoService personDaoService = new PersonDaoService(jdbcTemplate  );
+		PersonDaoService personDaoService = new PersonDaoService(namedParameterJdbcTemplate );
 		
 		PersonEntity personEntity = new PersonEntity();
 		
@@ -112,7 +105,7 @@ public String variousInsertofDatainPersonTable() {
 	
 	@GetMapping("/deleterowlambda/{id}")
 	public String DeleteDatainPersonTableById_AfterFindingRowWithLambda(@PathVariable int id) {
-		PersonDaoService personDaoService=new PersonDaoService( jdbcTemplate );
+		PersonDaoService personDaoService=new PersonDaoService( namedParameterJdbcTemplate);
 		PersonEntity personEntity=new PersonEntity();
 		personEntity=personDaoService.selectARowById_Lambda( id );
 		int i=personDaoService.deletePersonRecord( personEntity );
@@ -123,7 +116,7 @@ public String variousInsertofDatainPersonTable() {
 	
 	@GetMapping("/deleterowrowmapper/{id}")
 	public String DeleteDatainPersonTableById_AfterFindingRowWithRowMapper(@PathVariable int id) {
-		PersonDaoService personDaoService=new PersonDaoService( jdbcTemplate );
+		PersonDaoService personDaoService=new PersonDaoService( namedParameterJdbcTemplate);
 		PersonEntity personEntity=new PersonEntity();
 		personEntity=personDaoService.selectARowById_By_RowMappaer( id );
 		int i=personDaoService.deletePersonRecord( personEntity );
@@ -131,7 +124,7 @@ public String variousInsertofDatainPersonTable() {
 	}
 		@GetMapping("/all")
 		public List <PersonEntity> DisplayAllRows () {
-			PersonDaoService personDaoService=new PersonDaoService( jdbcTemplate );
+			PersonDaoService personDaoService=new PersonDaoService( namedParameterJdbcTemplate);
 		
 		//return  personDaoService.findAll();
 					//return personDaoService.getAllEmployeesRowMapper();
@@ -175,3 +168,5 @@ public String variousInsertofDatainPersonTable() {
 	
 	
 }
+
+*/

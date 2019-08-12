@@ -8,11 +8,8 @@ public class Person1SqDaoService{
 	
 	private JdbcTemplate jdbcTemplate;
 	
-	
-	
-	
 	public Person1SqDaoService(JdbcTemplate jdbcTemplate) {
-		this.jdbcTemplate=jdbcTemplate;
+	          this.jdbcTemplate=jdbcTemplate;
 	}
 	
 	@Nullable
