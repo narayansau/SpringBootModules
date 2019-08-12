@@ -2,8 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/module-1-only-thyme-leaf" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/module-2-jpa-web-apache_derby" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module-5-web-jdbc-mysql-lombok-thymeleaf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok" charset="UTF-8" />
   </component>
 </project>

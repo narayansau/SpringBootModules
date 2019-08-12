@@ -1,4 +1,4 @@
-package com.example.narayan.module3webjdbcmysqllombok.EntityServices;
+package com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices;
 
 import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
 import org.springframework.jdbc.core.RowMapper;
@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public  class PersonEntityRowMaper implements RowMapper <PersonEntity>{
+public  class PersonEntityRowMaper1 implements RowMapper <PersonEntity>{
 	
 	@Override
 	public PersonEntity mapRow(ResultSet  rs , int rowNum) throws SQLException {

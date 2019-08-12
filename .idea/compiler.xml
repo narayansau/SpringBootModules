@@ -8,14 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-maven" />
-        <module name="module-2-web-jpa-apache-derby-with-thyme-leaf" />
+        <module name="module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok" />
         <module name="module-3-web-jdbc-mysql-lombok" />
         <module name="module-1-only-thyme-leaf" />
+        <module name="module-2-web-jpa-apache-derby-with-thyme-leaf" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="jpa-web-apache_derby" target="1.8" />
       <module name="jpa-web-apachederby" target="1.8" />
+      <module name="module-5-web-jdbc-mysql-lombok-thymeleaf" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -25,6 +27,7 @@
       <module name="module-1-only-thyme-leaf" options="-parameters" />
       <module name="module-2-web-jpa-apache-derby-with-thyme-leaf" options="-parameters" />
       <module name="module-3-web-jdbc-mysql-lombok" options="-parameters" />
+      <module name="module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok" options="-parameters" />
     </option>
   </component>
 </project>

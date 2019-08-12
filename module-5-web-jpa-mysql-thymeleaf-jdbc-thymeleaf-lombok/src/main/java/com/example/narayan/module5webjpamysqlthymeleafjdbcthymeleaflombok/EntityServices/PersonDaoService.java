@@ -1,4 +1,4 @@
-package com.example.narayan.module3webjdbcmysqllombok.EntityServices;
+package com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices;
 
 import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
 import org.springframework.dao.DataAccessException;
@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -21,9 +22,6 @@ public class PersonDaoService{
 		this.jdbcTemplate=jdbcTemplate;
 	}
 	
-	public PersonDaoService() {
-	
-	}
 	
 	public void savePersonWith_execute_Command(PersonEntity e) {
 		
@@ -109,7 +107,7 @@ public class PersonDaoService{
 		String sql="SELECT * FROM person WHERE ID =  ? ";
 		
 		// Lambda function  (rs, rowNum) ->  is equivalent to BeanPropertyRowMapper
-		return jdbcTemplate.queryForObject( sql, new Object[]{e}, new PersonEntityRowMaper() {
+		return jdbcTemplate.queryForObject( sql, new Object[]{e}, new PersonEntityRowMaper1() {
 			@Override
 			public PersonEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return super.mapRow( rs, rowNum );
@@ -133,7 +131,7 @@ public class PersonDaoService{
 	
 	
 	public List<PersonEntity> getAllEmployeesRowMapper(){
-		return jdbcTemplate.query("select * from person",new   PersonEntityRowMaper(){
+		return jdbcTemplate.query("select * from person",new   PersonEntityRowMaper1(){
 			@Override
 			public PersonEntity mapRow(ResultSet rs, int rowNum) throws SQLException {
 				return super.mapRow( rs, rowNum );
@@ -211,7 +209,28 @@ public class PersonDaoService{
 						e.getModified() + "')" ;
 	}
 	
-	
-	
+
+	public void  insert_locally_with_execute (  Person1SqDaoService1 person1SqDaoService1 ) {
+		//jdbcTemplate = new JdbcTemplate();
+		Timestamp timestamp = new Timestamp(new Date().getTime());
+		 person1SqDaoService1 = new Person1SqDaoService1(jdbcTemplate);
+		
+		
+		jdbcTemplate.execute( "INSERT INTO person " +
+				" (id," +
+				"email," +
+				"name," +
+				"password," +
+				"role," +
+				"created," +
+				"enabled) " +
+				"VALUES  (" +  person1SqDaoService1.Person_1sq_get_Next()  +
+				" , 'NarayanSau@gmail.com', " +
+				"'Sonali Chndra Sau'," +
+				" 'bac123', " +
+				"'ADMIN', '" +
+				timestamp +
+				"' , 1 )") ;
+	}
 	
 }

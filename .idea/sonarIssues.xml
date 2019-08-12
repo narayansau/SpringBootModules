@@ -203,6 +203,46 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jdbc-mysql-lombok-thymeleaf/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/java/com/example/narayan/module5webjpamysqlthymeleafjdbcthymeleaflombok/Controller/PersonEntityController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/java/com/example/narayan/module5webjpamysqlthymeleafjdbcthymeleaflombok/EntityServices/JdbcCorporateEventDao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/java/com/example/narayan/module5webjpamysqlthymeleafjdbcthymeleaflombok/EntityServices/Person1SqDaoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/java/com/example/narayan/module5webjpamysqlthymeleafjdbcthymeleaflombok/EntityServices/Person1SqDaoService1.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/java/com/example/narayan/module5webjpamysqlthymeleafjdbcthymeleaflombok/EntityServices/PersonDaoService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/java/com/example/narayan/module5webjpamysqlthymeleafjdbcthymeleaflombok/EntityServices/PersonEntityRowMaper1.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>

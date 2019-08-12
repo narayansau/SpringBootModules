@@ -1,9 +1,10 @@
-package com.example.narayan.module3webjdbcmysqllombok.Controller;
+package com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.Controller;
 
 
 import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
-import com.example.narayan.module3webjdbcmysqllombok.EntityServices.Person1SqDaoService;
-import com.example.narayan.module3webjdbcmysqllombok.EntityServices.PersonDaoService;
+import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.Person1SqDaoService1;
+import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.PersonDaoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,17 +19,18 @@ import java.util.List;
 @RestController
 public class PersonEntityController{
 	
-	JdbcTemplate jdbcTemplate;
+	
+	 JdbcTemplate jdbcTemplate;
 	
 	
-	//@Autowired
+	@Autowired
 	public PersonEntityController(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate=jdbcTemplate;
 		
 		
 	}
 	
- 
+
 	
 //@RequestMapping("/insert")
 @GetMapping("/insert")
@@ -44,15 +46,15 @@ public String variousInsertofDatainPersonTable() {
 	 **************************/
 	
 	PersonDaoService personDaoService = new PersonDaoService( jdbcTemplate );
-	//PersonDaoService personDaoService = new PersonDaoService(  );
-	Person1SqDaoService person1SqDaoService = new Person1SqDaoService(jdbcTemplate);
+	
+	Person1SqDaoService1 person1SqDaoService1= new Person1SqDaoService1(jdbcTemplate);
 	PersonEntity personEntity = new PersonEntity();
 	
 	
 	
 	// Premitive type insert into a table
 	
-	insert_locally_with_execute (  person1SqDaoService  );
+	personDaoService.insert_locally_with_execute ( person1SqDaoService1 );
 	
 	
 	/*******************************
@@ -60,12 +62,12 @@ public String variousInsertofDatainPersonTable() {
 	 *  Set values of all required column of the entity
 	 *  Call DaoService of those entities.
 	 **********************************/
-	personEntity = setPersonEntity( personEntity , person1SqDaoService);
+	personEntity = setPersonEntity( personEntity , person1SqDaoService1 );
 		
 		// Insert can be done by  executing DDL query.  with void reurn type
 		personDaoService.savePersonWith_execute_Command(personEntity   );
 	
-	personEntity = setPersonEntity( personEntity , person1SqDaoService);
+	personEntity = setPersonEntity( personEntity , person1SqDaoService1 );
 	
 	
 	// Insert can be done by  executing update query.  with  return type Integer
@@ -95,7 +97,7 @@ public String variousInsertofDatainPersonTable() {
 	@GetMapping("/deleterow/{id}")
 	public String DeleteDatainPersonTableById_AfterFindingRow(@PathVariable int id) {
 		
-		PersonDaoService personDaoService = new PersonDaoService( jdbcTemplate );
+		PersonDaoService personDaoService = new PersonDaoService(jdbcTemplate  );
 		
 		PersonEntity personEntity = new PersonEntity();
 		
@@ -138,13 +140,13 @@ public String variousInsertofDatainPersonTable() {
 			return personDaoService.findAllAsQueryForList();
 		}
 		
-		PersonEntity setPersonEntity(PersonEntity personEntity , Person1SqDaoService person1SqDaoService ) {
+		PersonEntity setPersonEntity(PersonEntity personEntity , Person1SqDaoService1 person1SqDaoService1) {
 		
 		
 		
 		int seqId ;
 		
-		seqId = person1SqDaoService.Person_1sq_get_Next();
+		seqId = person1SqDaoService1.Person_1sq_get_Next();
 		
 		
 		
@@ -170,27 +172,6 @@ public String variousInsertofDatainPersonTable() {
 		
 	}
 	
-	public void  insert_locally_with_execute ( Person1SqDaoService person1SqDaoService  ) {
-		
-		Timestamp timestamp = new Timestamp(new Date().getTime());
-		
-		
-		
-		jdbcTemplate.execute( "INSERT INTO person " +
-				" (id," +
-				"email," +
-				"name," +
-				"password," +
-				"role," +
-				"created," +
-				"enabled) " +
-				"VALUES  (" +  person1SqDaoService.Person_1sq_get_Next()  +
-				" , 'NarayanSau@gmail.com', " +
-				"'Sonali Chndra Sau'," +
-				" 'bac123', " +
-				"'ADMIN', '" +
-				timestamp +
-				"' , 1 )") ;
-	}
+	
 	
 }
