@@ -84,7 +84,10 @@ public class PersonDaoService implements CRUDServices  <PersonEntity, Integer> {
 	
 	@Override
 	public int deleteARow(PersonEntity row) {
-		return 0;
+		int myId = row.getId();
+		
+		return  deleteARowById(myId);
+		
 	}
 	
 	@Override

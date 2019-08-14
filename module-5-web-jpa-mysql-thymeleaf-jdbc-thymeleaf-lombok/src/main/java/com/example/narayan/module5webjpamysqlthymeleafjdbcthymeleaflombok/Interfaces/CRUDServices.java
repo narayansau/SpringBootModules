@@ -16,4 +16,6 @@ public interface CRUDServices <ENTITYCLASS , IDTYPE> {
 	int deleteARow ( ENTITYCLASS  row);
 	
 	int updateARowdata(ENTITYCLASS  row);
+	
+	
 }

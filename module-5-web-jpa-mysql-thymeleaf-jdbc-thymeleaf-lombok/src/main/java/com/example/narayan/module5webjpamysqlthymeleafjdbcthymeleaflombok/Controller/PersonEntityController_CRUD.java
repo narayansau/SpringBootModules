@@ -66,10 +66,17 @@ public class PersonEntityController_CRUD{
 	}
 	
 	@GetMapping("/delete/{id}")
-	public  int  deleteARowa( @PathVariable Integer id) {
+	public  int  deleteARowById( @PathVariable Integer id) {
 		PersonDaoService personDaoService=new PersonDaoService( namedParameterJdbcTemplate);
 		
 		return personDaoService.deleteARowById( id );
+	}
+	
+	@GetMapping("/deleter/{id}")
+	public  int  deleteARowa( @PathVariable Integer id) {
+		PersonDaoService personDaoService=new PersonDaoService( namedParameterJdbcTemplate);
+		PersonEntity row =    personDaoService.selectARow( id);
+		return personDaoService.deleteARow( row );
 	}
 	
 	@GetMapping("/update/{id}")
