@@ -1,14 +1,114 @@
 package com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices;
 
+import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
+import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.Interfaces.CRUDServices;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
+import java.util.List;
 
-public class PersonDaoService{
+
+public class PersonDaoService implements CRUDServices  <PersonEntity, Integer> {
 	
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-	
+
 	public PersonDaoService(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
 		this.namedParameterJdbcTemplate=namedParameterJdbcTemplate;
+	}
+	
+	@Override
+	public PersonEntity selectARow(Integer primaryKey)  throws DataAccessException {
+			String sql = "SELECT * FROM person WHERE ID =  :primaryKey" ;
+			
+			
+		/**************************
+		PersonEntity  personEntity  = namedParameterJdbcTemplate.
+				                                queryForObject(  sql,
+												new MapSqlParameterSource().addValue( "primaryKey" , primaryKey ),
+												(rs, rowNum) -> new PersonEntity(
+																		rs.getInt("id"),
+																		rs.getString("email"),
+																		rs.getString("name"),
+																		rs.getString("password"),
+																		rs.getString("role"),
+																		rs.getByte("enabled"),
+																		rs.getTimestamp("birthdate") ,
+																		rs.getTimestamp("created") ,
+																		rs.getTimestamp("modified")));
+		*****************************/
+		
+		PersonEntity personEntity  =(PersonEntity) namedParameterJdbcTemplate.
+				queryForObject(  sql,
+						new MapSqlParameterSource().addValue( "primaryKey" , primaryKey ),
+						new BeanPropertyRowMapper <>(PersonEntity.class)  );
+		
+			return  personEntity;
+		
+	}
+	
+	
+	@Override
+	public List <PersonEntity> selectMultipleRows(PersonEntity row) {
+		 int id = row.getId();
+		String sql = "SELECT * FROM person where id > :id" ;
+		
+		List <PersonEntity>  personEntities  =(List <PersonEntity> ) namedParameterJdbcTemplate.
+				query(  sql,
+						new MapSqlParameterSource().addValue( "id", id ),
+						new BeanPropertyRowMapper <>( PersonEntity.class )  );
+		
+		return  personEntities;
+		
+	}
+	
+	@Override
+	public int insertARow(PersonEntity row) {
+		String query = Cretate_Query ( row  );
+        return namedParameterJdbcTemplate.update( query , new MapSqlParameterSource() );
+
+		
+		
+	}
+	
+	@Override
+	
+	public int deleteARowById(Integer id) {
+		String sql = "delete  FROM person where id = :id" ;
+		
+		return namedParameterJdbcTemplate.update( sql , new MapSqlParameterSource().
+				                                   addValue( "id",id) );
+		
+	}
+	
+	@Override
+	public int deleteARow(PersonEntity row) {
+		return 0;
+	}
+	
+	@Override
+	public int updateARowdata(PersonEntity row) {
+		String sql = "UPDATE  person set name = :name  where id = :id" ;
+		return namedParameterJdbcTemplate.update( sql , new MapSqlParameterSource().
+				addValue( "id", row.getId()) .
+				addValue( "name" , row.getName() + "ABC" ) );
+		
+	}
+	
+	private String Cretate_Query (PersonEntity e ){
+		
+		return
+				"insert into person values ( "  +
+						e.getId()  + ", '"  +
+						e.getEmail()  + "', '" +
+						e.getName() + "' , '" +
+						e.getPassword() + "' ,  '" +
+						e.getRole() + "' , " +
+						e.getEnabled() + " , '" +
+						e.getBirthdate() + "' , '" +
+						e.getCreated() + "' , '" +
+						e.getModified() + "')" ;
 	}
 	
 }

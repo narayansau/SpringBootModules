@@ -18,7 +18,7 @@ public class Person1Sq{
 		this.id=id;
 	}
 	
-	public Person1Sq() {
+	public Person1Sq(int id, String person_seq) {
 	}
 	
 	public int getId() {

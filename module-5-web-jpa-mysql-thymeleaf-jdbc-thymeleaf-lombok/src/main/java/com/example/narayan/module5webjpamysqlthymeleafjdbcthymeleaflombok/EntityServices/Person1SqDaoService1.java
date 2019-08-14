@@ -19,22 +19,25 @@ public class Person1SqDaoService1{
 	@Nullable
 	public int Person_1sq_get_Next() {
 		
-		
-		
+		/****************************
+		 * // passing parameters
 		String sql = "select * from person_1sq  where id > :id ";
 		SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("id", 1);
 		int seqId  = namedParameterJdbcTemplate.queryForObject(  sql, namedParameters, Integer.class);
 		
+		***************************/
+		
+		//Another way
 		
 		String sql1 = "select * from person_1sq   ";
-		SqlParameterSource namedParameters1 = new MapSqlParameterSource().addValue("id" , null );
-		 seqId  = namedParameterJdbcTemplate.queryForObject(  sql1, namedParameters1, Integer.class);
 		
-		 String query ="update person_1sq set id  = :id" ;
+		int seqId  = namedParameterJdbcTemplate.queryForObject(  sql1, new MapSqlParameterSource(),Integer.class );
+		
+		String query ="update person_1sq set id  = :id" ;
 		//namedParameterJdbcTemplate.update(query);
 		
 		// Adding params using MapSqlParameterSource class
-		 namedParameters = new MapSqlParameterSource().
+		SqlParameterSource namedParameters = new MapSqlParameterSource().
 				addValue("id", seqId + 1);
 		
 		int status = namedParameterJdbcTemplate.update(query, namedParameters);

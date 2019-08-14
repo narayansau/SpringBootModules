@@ -2,8 +2,10 @@ package com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.Contr
 
 
 import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
+import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.Sequence1SqDAOImplimentation;
 import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.Person1SqDaoService1;
 import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.PersonDaoService;
+import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.SequenceDaoService;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,13 +35,24 @@ public class PersonEntityController{
 		
 		
 		Person1SqDaoService1 person1SqDaoService1=new Person1SqDaoService1( namedParameterJdbcTemplate );
+		SequenceDaoService  sequenceDaoService = new SequenceDaoService( namedParameterJdbcTemplate);
 		
 		PersonDaoService personDaoService=new PersonDaoService( namedParameterJdbcTemplate );
 		PersonEntity personEntity=new PersonEntity();
 		
 		seqId = person1SqDaoService1.Person_1sq_get_Next();
 		
-		return "Got the sequence"  + seqId   +  namedParameterJdbcTemplate.getJdbcTemplate() + "  " +
+		int seqId1 = sequenceDaoService.Sequence_1sq_get_Next();
+		
+		Sequence1SqDAOImplimentation person1SqDAOImplimentation =
+				new Sequence1SqDAOImplimentation(namedParameterJdbcTemplate);
+		
+		int seqId2 = person1SqDAOImplimentation.GetNextVal( "PERSON_1SQ" );
+		            person1SqDAOImplimentation.IncrementNextVal( "PERSON_1SQ" );
+		
+		return "Got the sequence"   + seqId + " impl : "  + seqId2
+				+  namedParameterJdbcTemplate.getJdbcTemplate() + "  " +
+				    seqId1  +
 				    namedParameterJdbcTemplate.getJdbcOperations();
 	}
 }
