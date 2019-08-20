@@ -218,6 +218,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/java/com/example/narayan/module5webjpamysqlthymeleafjdbcthymeleaflombok/Controller/WebConroller.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/java/com/example/narayan/module5webjpamysqlthymeleafjdbcthymeleaflombok/Controller/WebController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/java/com/example/narayan/module5webjpamysqlthymeleafjdbcthymeleaflombok/Entity/Person1Sq.java">
           <value>
             <set />
@@ -294,6 +304,156 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/resources/static/css/styles.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/resources/static/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/resources/templates/addPerson.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/resources/templates/index.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/resources/templates/personList.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/src/main/resources/templates/styles.css">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/DAOImplementation/CustomUserDetailService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/Entities/Messages.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/Entities/Roles.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/Entities/UserRoles.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/Entities/Users.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/HomeController/HomeController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/Repository/MessageRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/Repository/UserRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/WebController/WebConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/java/com/narayan/example/module6springhibernatethymeleafmysqlexample/WebController/WebSecurityConfig.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/java/com/example/narayan/module7websecurityjpamysqlthymeleaf/CRUD_Interface/EntityInterface.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/java/com/example/narayan/module7websecurityjpamysqlthymeleaf/Configuration/SecurityConfiguration.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/java/com/example/narayan/module7websecurityjpamysqlthymeleaf/Controller/PersonController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/java/com/example/narayan/module7websecurityjpamysqlthymeleaf/Controller/UserRegistrationController.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/java/com/example/narayan/module7websecurityjpamysqlthymeleaf/PersonService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/java/com/example/narayan/module7websecurityjpamysqlthymeleaf/Repository/PersonRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/java/com/example/narayan/module7websecurityjpamysqlthymeleaf/Repository/Repository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/java/com/example/narayan/module7websecurityjpamysqlthymeleaf/ServiceEntities/PersonService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/java/com/example/narayan/module7websecurityjpamysqlthymeleaf/ServiceEntities/PersonServiceInterface.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/resources/application.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/src/main/resources/templates/index.html">
           <value>
             <set />
           </value>

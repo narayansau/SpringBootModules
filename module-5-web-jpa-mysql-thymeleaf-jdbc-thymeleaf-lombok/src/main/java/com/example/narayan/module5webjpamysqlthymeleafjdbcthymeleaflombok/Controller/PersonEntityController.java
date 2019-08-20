@@ -2,16 +2,15 @@ package com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.Contr
 
 
 import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
-import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.Sequence1SqDAOImplimentation;
 import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.Person1SqDaoService1;
 import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.PersonDaoService;
+import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.Sequence1SqDAOImplimentation;
 import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.EntityServices.SequenceDaoService;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController
+//@RestController
 public class PersonEntityController{
 	
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;

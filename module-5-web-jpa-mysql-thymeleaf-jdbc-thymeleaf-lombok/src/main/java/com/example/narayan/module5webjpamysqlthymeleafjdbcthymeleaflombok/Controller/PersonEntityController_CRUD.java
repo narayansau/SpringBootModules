@@ -7,14 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-@RestController
+//@RestController
 public class PersonEntityController_CRUD{
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
@@ -89,12 +88,12 @@ public class PersonEntityController_CRUD{
 	
 	
 	
-	PersonEntity setPersonEntity(PersonEntity personEntity ) {
+	public PersonEntity setPersonEntity(PersonEntity personEntity ) {
 		
 		int seqId ;
 		
 		seqId = getNextSequence();
-		personEntity.setId( seqId );
+		
 		Timestamp timestamp = new Timestamp(new Date().getTime());
 		Calendar cal = Calendar.getInstance();
 		cal.setTimeInMillis(timestamp.getTime());
@@ -102,6 +101,7 @@ public class PersonEntityController_CRUD{
 		cal.add(Calendar.YEAR, -20);
 		Timestamp birhDate = new Timestamp(cal.getTime().getTime());
 		
+		personEntity.setId( seqId );
 		personEntity.setEmail( "Nihgdgdgd@gmail.com" );
 		personEntity.setName( "Sonali Sau" );
 		personEntity.setPassword( "jhjhj" );
@@ -112,7 +112,33 @@ public class PersonEntityController_CRUD{
 		personEntity.setCreated( timestamp );
 		personEntity.setModified(  timestamp);
 		
-		return personEntity;
+		//return personEntity;
+		
+		return new PersonEntity (seqId  ,"Nihgdgdgd@gmail.com" , "Sonali Sau", "abcdedff",
+				"Admin" , (byte) 1,  birhDate,
+				timestamp,timestamp);
+		
+	}
+	
+	public PersonEntity setPersonEntity( ) {
+		
+		int seqId ;
+		
+		seqId = getNextSequence();
+		
+		Timestamp timestamp = new Timestamp(new Date().getTime());
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(timestamp.getTime());
+		
+		cal.add(Calendar.YEAR, -20);
+		Timestamp birhDate = new Timestamp(cal.getTime().getTime());
+		
+		
+		//return personEntity;
+		
+		return new PersonEntity (seqId  ,"Nihgdgdgd@gmail.com" , "Sonali Sau", "abcdedff",
+				"Admin" , (byte) 1,  birhDate,
+				timestamp,timestamp);
 		
 	}
 	

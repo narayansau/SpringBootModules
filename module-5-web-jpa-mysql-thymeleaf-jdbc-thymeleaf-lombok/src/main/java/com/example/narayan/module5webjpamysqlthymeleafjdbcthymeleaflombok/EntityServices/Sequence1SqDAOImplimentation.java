@@ -5,8 +5,10 @@ import com.example.narayan.module5webjpamysqlthymeleafjdbcthymeleaflombok.Interf
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+@Repository
 public class Sequence1SqDAOImplimentation implements CRUDServiceForSequence <String , Sequence> {
 	
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
@@ -15,6 +17,9 @@ public class Sequence1SqDAOImplimentation implements CRUDServiceForSequence <Str
 	
 	public Sequence1SqDAOImplimentation(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
 		this.namedParameterJdbcTemplate=namedParameterJdbcTemplate;
+	}
+	public Sequence1SqDAOImplimentation() {
+	
 	}
 	
 	@Override
@@ -57,5 +62,15 @@ public class Sequence1SqDAOImplimentation implements CRUDServiceForSequence <Str
 		}
 		));
 		return seqn;
+	}
+	
+	
+	
+	public int getNextSequence() {
+		
+		int seqId2 = GetNextVal( "PERSON_1SQ" );
+		int stat = IncrementNextVal( "PERSON_1SQ" );
+		
+		return  seqId2   ;
 	}
 }

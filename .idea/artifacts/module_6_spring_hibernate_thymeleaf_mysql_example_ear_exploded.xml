@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="module-6-spring-hibernate-thymeleaf-mysql-example:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/module_6_spring_hibernate_thymeleaf_mysql_example_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="module-6-spring-hibernate-thymeleaf-mysql-Security-example/javaeeApplication/javaEEApplication" />
+    </root>
+  </artifact>
+</component>

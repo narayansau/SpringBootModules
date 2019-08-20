@@ -7,11 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot-maven" />
-        <module name="module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok" />
-        <module name="module-3-web-jdbc-mysql-lombok" />
-        <module name="module-1-only-thyme-leaf" />
         <module name="module-2-web-jpa-apache-derby-with-thyme-leaf" />
+        <module name="module-7-web-security-jpa-mysql-thymeleaf" />
+        <module name="module-6-spring-hibernate-thymeleaf-mysql-Security-example" />
+        <module name="springboot-maven" />
+        <module name="module-1-only-thyme-leaf" />
+        <module name="module-3-web-jdbc-mysql-lombok" />
+        <module name="module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -28,6 +30,8 @@
       <module name="module-2-web-jpa-apache-derby-with-thyme-leaf" options="-parameters" />
       <module name="module-3-web-jdbc-mysql-lombok" options="-parameters" />
       <module name="module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok" options="-parameters" />
+      <module name="module-6-spring-hibernate-thymeleaf-mysql-Security-example" options="-parameters" />
+      <module name="module-7-web-security-jpa-mysql-thymeleaf" options="-parameters" />
     </option>
   </component>
 </project>

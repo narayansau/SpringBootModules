@@ -4,11 +4,13 @@ package com.example.narayan.module3webjdbcmysqllombok.Controller;
 import com.example.narayan.module3webjdbcmysqllombok.Entity.PersonEntity;
 import com.example.narayan.module3webjdbcmysqllombok.EntityServices.Person1SqDaoService;
 import com.example.narayan.module3webjdbcmysqllombok.EntityServices.PersonDaoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.sql.DataSource;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Date;
@@ -19,6 +21,7 @@ import java.util.List;
 public class PersonEntityController{
 	
 	JdbcTemplate jdbcTemplate;
+	DataSource dataSource;
 	
 	
 	//@Autowired
@@ -26,6 +29,12 @@ public class PersonEntityController{
 		this.jdbcTemplate=jdbcTemplate;
 		
 		
+	}
+	@Autowired
+public void setDataSource(DataSource dataSource) {
+
+		this.dataSource = dataSource;
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
  

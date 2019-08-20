@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/module-2-web-jpa-apache-derby-with-thyme-leaf/pom.xml" />
         <option value="$PROJECT_DIR$/module-3-web-jdbc-mysql-lombok/pom.xml" />
         <option value="$PROJECT_DIR$/module-5-web-jpa-mysql-thymeleaf-jdbc-thymeleaf-lombok/pom.xml" />
+        <option value="$PROJECT_DIR$/module-6-spring-hibernate-thymeleaf-mysql-example/pom.xml" />
+        <option value="$PROJECT_DIR$/module-7-web-security-jpa-mysql-thymeleaf/pom.xml" />
       </list>
     </option>
   </component>
